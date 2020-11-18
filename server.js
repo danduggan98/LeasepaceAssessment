@@ -20,7 +20,13 @@ app.get('/search', (req, res) => {
             res.status(400).send('Request failed: improper formatting');
         }
         else {
-            let results = [];
+            const inputRegex = new RegExp(input.toLowerCase());
+
+            //Find items that match the search input
+            const results = cityData.filter(city => {
+                const cityLowercase = city['city'].toLowerCase();
+                return inputRegex.test(cityLowercase);
+            })
             res.status(200).json(results);
         }
     }
