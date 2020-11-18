@@ -2,6 +2,7 @@
     "name": "leasepace-assessment",
     "authors": "Dan Duggan",
     "private": true,
+    "type": "module",
     "scripts": {
         "start": "node server.js",
         "dev-server": "nodemon --watch server.js",
