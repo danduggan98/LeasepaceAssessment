@@ -1,7 +1,10 @@
 const FormattedResults = (props) => {
     const cityList = props.data.map(
         city => (
-            <div>{city.city}, {city.state}</div>
+            <div className='cityData'>
+                <div>{city.city}, {city.state}</div>
+                { /* Additional data here */ }
+            </div>
         )
     )
     
