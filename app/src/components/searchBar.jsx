@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FormattedResults from './formattedResults';
 import '../styles/searchBar.css';
 
 const SearchBar = () => {
@@ -19,8 +20,6 @@ const SearchBar = () => {
 
         const response = await fetch('/search', requestOptions);
         const results  = await response.json();
-
-        console.log(results); //FOR TESTING - remove later
         setSearchResults(results);
     }
 
@@ -52,7 +51,7 @@ const SearchBar = () => {
                 </button>
             </form>
 
-            <div>{searchResults.toString()}</div>
+            <FormattedResults data={searchResults} />
         </div>
     )
 }
