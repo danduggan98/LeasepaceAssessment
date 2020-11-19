@@ -1,9 +1,10 @@
 import './App.css';
+import SearchBar from './components/searchBar';
 
-function App() {
+const App = () => {
 	return (
 		<div className="App">
-			<p>This is where the app will go!</p>
+            <SearchBar />
 		</div>
 	);
 }
