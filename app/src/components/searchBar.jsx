@@ -1,11 +1,27 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react';
+import '../styles/searchBar.css';
 
 const SearchBar = () => {
-    const devHost = 'localhost:2000'; //Temporary location of dev server - change for production
     const [userInput, setUserInput] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
 
-    const submitForm = (event) => {
+    const submitSearch = async (event) => {
         event.preventDefault();
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ input: userInput })
+        };
+
+        const response = await fetch('/search', requestOptions);
+        const results  = await response.json();
+
+        console.log(results); //FOR TESTING - remove later
+        setSearchResults(results);
     }
 
     const updateInput = (event) => {
@@ -18,7 +34,7 @@ const SearchBar = () => {
 
             <form
                 name='searchBar'
-                onSubmit={submitForm}>
+                onSubmit={submitSearch}>
 
                 <input
                     name='searchInput'
@@ -28,9 +44,15 @@ const SearchBar = () => {
                     placeholder='City name'
                     onChange={updateInput}>
                 </input>
+
+                <button
+                    type='submit'
+                    id='searchButton'>
+                        Search
+                </button>
             </form>
 
-            <div>{userInput}</div>
+            <div>{searchResults.toString()}</div>
         </div>
     )
 }
