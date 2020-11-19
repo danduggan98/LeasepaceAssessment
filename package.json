@@ -7,7 +7,9 @@
         "start": "node server.js",
         "dev-server": "nodemon --watch server.js",
         "dev-frontend": "cd app && npm run start",
-        "dev": "concurrently \"npm run dev-server\" \"npm run dev-frontend\""
+        "dev": "concurrently \"npm run dev-server\" \"npm run dev-frontend\"",
+        "build": "cd app && npm run build",
+        "refresh": "npm run build && npm start"
     },
     "dependencies": {
         "axios": "^0.21.0",
