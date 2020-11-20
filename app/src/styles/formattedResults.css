@@ -1,0 +1,27 @@
+.cityData {
+    max-width: 65%;
+    min-width: 350px;
+    border: 1px solid darkgrey;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    background-color: #f8f8f8;
+}
+
+.cityName {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.secondaryDetails {
+    display: flex;
+    flex-wrap: row;
+    text-align: left;
+    font-size: 14px;
+}
+
+.detailsLeft {
+    margin-right: 20px;
+    width: 40%;
+}
