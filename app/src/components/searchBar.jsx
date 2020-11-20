@@ -34,7 +34,9 @@ const SearchBar = () => {
 
     return (
         <div id='searchContainer'>
-            <span>Search for American cities</span>
+            <div id='header'>
+                Search for American cities
+            </div>
 
             <form
                 name='searchBar'
@@ -51,8 +53,8 @@ const SearchBar = () => {
 
                 <button
                     type='submit'
+                    className='fa fa-search'
                     id='searchButton'>
-                        Search
                 </button>
             </form>
 
@@ -60,14 +62,18 @@ const SearchBar = () => {
                 (
                     latestSearch.length
                       ? <div>
-                            <div>Results for "{latestSearch}":</div>
+                            <div id='resultsLabel'>
+                                Results for "{latestSearch}":
+                            </div>
                             <FormattedResults data={searchResults} />
                         </div>
-                      : <div>Please enter something to search</div>
+                      : <div className='notice'>
+                            Please enter something to search
+                        </div>
                 )
             }
         </div>
-    )
+    );
 }
 
 export default SearchBar;

@@ -27,9 +27,9 @@ const FormattedResults = (props) => {
         <div>
             { cityList.length
               ? cityList
-              : <span className='notice'>
+              : <div className='notice'>
                     None - please try again
-                </span>
+                </div>
             }
         </div>
     );
