@@ -1,8 +1,7 @@
 .cityData {
     max-width: 65%;
-    min-width: 350px;
-    border: 1px solid darkgrey;
-    border-radius: 3px;
+    border: 2px solid darkgrey;
+    border-radius: 4px;
     margin-bottom: 10px;
     padding: 10px 12px;
     background-color: #f8f8f8;
@@ -19,6 +18,7 @@
     flex-wrap: row;
     text-align: left;
     font-size: 14px;
+    line-height: 1.5;
 }
 
 .detailsLeft {
