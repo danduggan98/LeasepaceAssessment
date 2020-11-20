@@ -3,9 +3,7 @@ import SearchBar from './components/searchBar';
 
 const App = () => {
 	return (
-		<div className="App">
-            <SearchBar />
-		</div>
+        <SearchBar />
 	);
 }
 
