@@ -1,3 +1,33 @@
 #searchContainer {
-    margin-top: 30px;
+    width: 50%;
+    margin: auto;
+}
+
+#header {
+    font-size: 26px;
+    margin: 15px auto;
+}
+
+#searchInput {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0px auto 15px auto;
+    font-size: 20px;
+}
+
+#searchButton {
+    width: 60px;
+    height: 60px;
+    border: none;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#resultsLabel {
+    margin-bottom: 15px;
+    font-size: 20px;
 }
