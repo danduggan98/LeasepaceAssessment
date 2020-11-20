@@ -3,8 +3,10 @@ import FormattedResults from './formattedResults';
 import '../styles/searchBar.css';
 
 const SearchBar = () => {
-    const [userInput, setUserInput] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+    const [userInput, setUserInput]             = useState('');
+    const [searchSubmitted, setSearchSubmitted] = useState(false);
+    const [latestSearch, setLatestSearch]       = useState('');
+    const [searchResults, setSearchResults]     = useState([]);
 
     const submitSearch = async (event) => {
         event.preventDefault();
@@ -20,6 +22,9 @@ const SearchBar = () => {
 
         const response = await fetch('/search', requestOptions);
         const results  = await response.json();
+
+        setSearchSubmitted(true);
+        setLatestSearch(userInput);
         setSearchResults(results);
     }
 
@@ -29,7 +34,7 @@ const SearchBar = () => {
 
     return (
         <div id='searchContainer'>
-            <span>Search for American Cities</span>
+            <span>Search for American cities</span>
 
             <form
                 name='searchBar'
@@ -51,7 +56,16 @@ const SearchBar = () => {
                 </button>
             </form>
 
-            <FormattedResults data={searchResults} />
+            { searchSubmitted &&
+                (
+                    latestSearch.length
+                      ? <div>
+                            <div>Results for "{latestSearch}":</div>
+                            <FormattedResults data={searchResults} />
+                        </div>
+                      : <div>Please enter something to search</div>
+                )
+            }
         </div>
     )
 }
