@@ -35,12 +35,12 @@
     color: black;
     font-size: 20px;
     cursor: pointer;
-    background-color: #f2f2f2;
-    padding: 10px 10px;
+    background-color: #e6e6e6;
+    padding: 10px 12px;
 }
 
 #searchButton:hover {
-    background-color: #e6e6e6;
+    background-color: #cccccc;
 }
 
 #results {
