@@ -4,7 +4,11 @@ body {
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Include scroll bar width so adding it doesn't shift anything */
+    width: calc(100vw - 17px);
+    padding-left: 17px;
 }
 
 code {
