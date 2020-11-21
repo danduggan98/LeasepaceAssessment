@@ -1,33 +1,51 @@
 #searchContainer {
-    width: 50%;
+    max-width: 50%;
     margin: auto;
 }
 
 #header {
     font-size: 26px;
     margin: 15px auto;
+    text-align: center;
+}
+
+#searchBarWrapper {
+    text-align: center;
+}
+
+#searchBar {
+    margin: 0px auto 15px auto;
 }
 
 #searchInput {
     border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 0px auto 15px auto;
+    border-radius: 50px;
+    padding: 10px 15px;
     font-size: 20px;
+    width: 60%;
 }
 
 #searchButton {
-    width: 60px;
-    height: 60px;
-    border: none;
+    border: 2px solid black;
     color: black;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     cursor: pointer;
-    z-index: 1;
+    padding: 5px;
+    margin-left: 5px;
+    background-color: lightgrey;
+}
+
+#searchButton:hover {
+    background-color: darkgrey;
+}
+
+#results {
+    margin: 0 auto;
 }
 
 #resultsLabel {
     margin-bottom: 15px;
     font-size: 20px;
+    text-align: center;
 }
