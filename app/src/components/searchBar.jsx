@@ -37,31 +37,34 @@ const SearchBar = () => {
             <div id='header'>
                 Search for American cities
             </div>
-
+            
             <form
                 name='searchBar'
+                id='searchBar'
                 onSubmit={submitSearch}>
+                
+                <div id='searchBarWrapper'>
+                    <input
+                        name='searchInput'
+                        id='searchInput'
+                        type='text'
+                        autoComplete='off'
+                        placeholder='City name'
+                        onChange={updateInput}>
+                    </input>
 
-                <input
-                    name='searchInput'
-                    id='searchInput'
-                    type='text'
-                    autoComplete='off'
-                    placeholder='City name'
-                    onChange={updateInput}>
-                </input>
-
-                <button
-                    type='submit'
-                    className='fa fa-search'
-                    id='searchButton'>
-                </button>
+                    <button
+                        type='submit'
+                        id='searchButton'>
+                            Search
+                    </button>
+                </div>
             </form>
 
             { searchSubmitted &&
                 (
                     latestSearch.length
-                      ? <div>
+                      ? <div id='results'>
                             <div id='resultsLabel'>
                                 Results for "{latestSearch}":
                             </div>
